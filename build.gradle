@@ -39,6 +39,7 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: "io.freefair.lombok"
 
 // mainClassName="${artifact_groupId}.App"
+mainClassName="mongodb.MongodbApplication"
 
 repositories {
     mavenCentral()
@@ -104,17 +105,6 @@ artifactory {
         }
     }
 }
-
-// jar {
-//     enabled = true
-//     manifest {
-//         // attributes 'Main-Class': mainClassName,
-//                    'Implementation-Version': version
-//     }
-//     from {
-//         configurations.implementation.collect { it.isDirectory() ? it : zipTree(it) }
-//     }
-// }
 
 test {
     dependsOn 'cleanTest'

@@ -38,7 +38,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: "io.freefair.lombok"
 
-mainClassName="${artifact_groupId}.App"
+// mainClassName="${artifact_groupId}.App"
 
 repositories {
     mavenCentral()
@@ -105,16 +105,16 @@ artifactory {
     }
 }
 
-jar {
-    enabled = true
-    manifest {
-        attributes 'Main-Class': mainClassName,
-                   'Implementation-Version': version
-    }
-    from {
-        configurations.implementation.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-}
+// jar {
+//     enabled = true
+//     manifest {
+//         // attributes 'Main-Class': mainClassName,
+//                    'Implementation-Version': version
+//     }
+//     from {
+//         configurations.implementation.collect { it.isDirectory() ? it : zipTree(it) }
+//     }
+// }
 
 test {
     dependsOn 'cleanTest'
